@@ -1,0 +1,35 @@
+
+  <h1 class="text-center">Sign in to manage your account</h1>
+  <div class="loginwidget container-fluid" >
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <!-- <img alt="mylogo" src="../logo.jpg"> -->
+    <div class="form-group">
+      <img alt="logo" style="text-align: center" src="../../assets/logo.jpg">
+      <br>
+      <label>User ID</label>
+      <input class="form-control"  type="text" formControlName="User" >
+      <small class="text-danger" [class.d-none]="true">Be sure you enter a valid ID. If you don’t remember your ID, use the Forgot ID link.</small>
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input class="form-control"  type="password" formControlName="password">
+      <small class="text-danger" [class.d-none]="true">Be sure you enter a valid password. If you don’t remember your password, use the Forgot password link.</small>
+    </div>
+
+    <a href="">Show password  </a>
+    <br>
+    <button class="btn btn-primary btn-block" type="submit"   >Sign in</button>
+
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" formControlName="saveID"><span>Save ID</span><br>
+    <small>Consider unchecking if on shared device</small>
+    </div>
+
+    <div>
+      <p style="text-align: center">Forgot <a href='#'>UserID</a> or <a href='#'>password?</a> </p>
+      <p style="text-align: center">Don't have an ID? <a href="/register"> Create one now </a></p>
+    </div>
+
+  </form>
+</div>

@@ -1,0 +1,31 @@
+mat-card {
+  width: 80%;
+  margin: auto;
+}
+
+mat-form-field,
+textarea{
+  width: 100%;
+}
+
+.payment {
+  width: 40%;
+  height: 20%;
+  background-color: aquamarine;
+}
+
+.mywireless{
+  width: 40%;
+  height: 20%;
+  background-color: aquamarine;
+}
+
+main {
+  margin-top: 1rem;
+  width: 80%;
+  margin : auto;
+}
+
+.info-text {
+  text-align: center;
+}

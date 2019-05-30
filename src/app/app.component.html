@@ -1,0 +1,54 @@
+
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+ <nav class="navbar  navbar-light" >
+
+  <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+
+   <input type="text" placeholder="I'm looking for..."><button class="btn-outline-secondary" tabindex="0" aria-label="Search" >Search</button>
+
+   <a  routerLink="/billing">Billing</a>
+   <a routerLink="/payment">Payment</a>
+   <a routerLink="/usage">Usage</a>
+   <a routerLink="/profile">Profile</a>
+
+   <p [class.d-none]=!authenticated style="color:tomato" class="my-2"> <mat-icon style="color :black" >shopping_cart</mat-icon>|Hello {{userName}}</p>
+   <p [class.d-none]=authenticated style="color:tomato" class="my-2">Hi Guest </p>
+    <mat-icon matBadge="15" matBadgeColor="warn">notifications</mat-icon>
+   <a routerLink="/">login</a>
+ </nav>
+ <div style="background-color: turquoise" class="collapse navbar-collapse" id=navbarMenu>
+    <ul class="navbar-nav">
+      <li class="navbar-item">
+        <a href="#" class="nav-link" style="color: black">Wireless</a>
+      </li>
+      <li class="navbar-item">
+          <a href="#" class="nav-link" style="color: black">Prepaid</a>
+        </li>
+
+    </ul>
+</div>
+
+ <h1>
+    Welcome to {{ title }}!
+  </h1>
+<router-outlet></router-outlet>
+<a routerLink="/overview">Go to overview</a>
+<footer class="bg-dark py-5">
+  <ul>
+    <li>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+    </li>
+    <li>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+      </li>
+      <li>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+        </li>
+  </ul>
+
+
+  </footer>
+

@@ -1,0 +1,62 @@
+
+<mat-card>
+  <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+    <mat-form-field>
+        <input  matInput type="text" name="enteredTitle" ngModel required minlength="3" #title="ngModel">
+        <mat-error *ngIf="title.invalid"> Please enter post title</mat-error>
+    </mat-form-field>
+  <mat-form-field>
+      <textarea  matInput rows="6" name="enteredContent" ngModel required #content="ngModel"></textarea>
+      <mat-error *ngIf="content.invalid"> Please enter post Content</mat-error>
+  </mat-form-field>
+  <button
+   mat-raised-button
+   color="warn" type="submit" >Save Post</button>
+   </form>
+</mat-card>
+<hr>
+
+<mat-accordion multi="true" *ngIf="Posts.length > 0">
+    <mat-expansion-panel  *ngFor="let post of Posts" >
+      <mat-expansion-panel-header >
+        {{post.title}}
+      </mat-expansion-panel-header>
+      <p>{{post.content}}</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <p class="info-text mat-body-2" *ngIf="Posts.length <= 0" >No Posts added yet </p>
+
+<hr>
+<mat-card class="payment">
+  <mat-card-title>
+    Total Payment
+    <mat-card-subtitle>
+        See all your details here
+    </mat-card-subtitle >
+        <button mat-raised-button color="accent" routerLink="/billing" >See my bill</button>
+        <button mat-button style="color: teal" routerLink="/payment"> Make Payment</button>
+  </mat-card-title>
+</mat-card>
+<hr>
+<div  >
+<mat-card class="mywireless">
+  <mat-card-title>
+    My Wireless
+  </mat-card-title>
+  <mat-card-subtitle>
+    Mobile share advantage 10 GB | Account : 54896624499
+  </mat-card-subtitle>
+  <mat-progress-bar mode="indeterminate" value="40"   color="accent">
+  </mat-progress-bar>
+  <mat-progress-bar mode="query" value="50" bufferValue="39" color="warn">
+    </mat-progress-bar>
+    10 days left
+</mat-card>
+</div>
+
+<br>
+<a routerLink="/billing">Billing</a>
+  <a routerLink="/payment">Payment</a>
+  <a routerLink="/usage">Usage</a>
+  <a routerLink="/profile">Profile</a>
